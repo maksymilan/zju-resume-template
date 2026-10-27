@@ -1,6 +1,4 @@
 \documentclass[11pt]{article}
-
-
 \setlength{\parindent}{0pt}
 \usepackage{xltxtra}
 \usepackage{hyperref}
@@ -17,29 +15,22 @@
 \usepackage{xeCJK}
 \usepackage{enumitem}
 \CJKsetecglue{} %% 取消中文与数字之间的间隙
-
-
 %% 主文档字体设置
 \setmainfont[
     Path = fonts/Main/,
     Extension = .otf,
     BoldFont = texgyretermes-bold.otf, % 加粗字体
 ]{texgyretermes-regular.otf} % 正文字体
-
 % 中文字体设置
 \setCJKmainfont[
     Path = fonts/hansans/,
     Extension = .ttf,
     BoldFont = NotoSansSC-Bold.ttf, % 加粗字体
 ]{NotoSansSC-Regular.otf} % 正文字体
-
-
 \usepackage{relsize}
 \usepackage{xspace}
-
 % 使用 fontawesome（部分图标）
 \usepackage{fontawesome} 
-
 % A4纸，上下左右边距
 \usepackage[
     a4paper,
@@ -49,45 +40,33 @@
     bottom=1cm,
     nohead
 ]{geometry}
-
 \renewcommand{\baselinestretch}{1.5} % 行间距设为1.5
-
 \usepackage{titlesec}
 \usepackage{enumitem}
 \setlist{noitemsep} % 取消列表项间的额外间距
 %\setlist{nosep} % 取消所有垂直间距
 \setlist[itemize]{topsep=0.25em, leftmargin=*}
 \setlist[enumerate]{topsep=0.25em, leftmargin=*}
-
 % --- 用于控制【不同项目之间】的垂直距离 ---
 \newlength{\interProjectSpacing}
 \setlength{\interProjectSpacing}{0.9em} % <--- 在此调整项目之间的距离
 \newcommand{\projectsep}{\vspace{\interProjectSpacing}}
-
 % --- 用于控制【项目标题】与下方【项目描述】的距离 ---
 \newlength{\intraProjectTitleSep}
 \setlength{\intraProjectTitleSep}{0.4em} % <--- 在此调整标题和描述的距离
 \newcommand{\titlebreak}{\\[\intraProjectTitleSep]}
-
 % --- 用于控制【项目描述】与下方【要点列表】的距离 ---
 \newlength{\intraProjectListTopSep}
 \setlength{\intraProjectListTopSep}{0.2em} % <--- 在此调整描述和列表的距离
-
 % =======================================================================
-
-
 \titleformat{\section}         % 定制 \section 命令 
 {\large\bfseries\raggedright} % 将 section 标题设置为大号、粗体且左对齐
 {}{0em}                      % 可用于为所有 section 添加前缀（如“章节...”）
 {}                           % 可用于在标题前插入代码
 [{\color{CVBlue}\titlerule}]  % 在标题后插入一条横线
 \titlespacing*{\section}{0cm}{*1.6}{*1.2}
-
-
-
 \begin{document}
 \pagenumbering{gobble}
-
 %%%% 利用tikz来定位照片
 \begin{tikzpicture}[remember picture, overlay] 
     \node[anchor = north east] at ($(current page.north east)+(-2cm,-1.2cm)$) {\includegraphics[height=3cm]{avatar.jpg}};
@@ -96,60 +75,54 @@
   \begin{tikzpicture}[remember picture, overlay] 
     \node[anchor = north west] at ($(current page.north west)+(0.5cm,+1.0cm)$) {\includegraphics[height=6cm]{zju.png}};
   \end{tikzpicture}%
-\centerline{\LARGE\bfseries{胡豆}} 
-
+\centerline{\LARGE\bfseries{孙梓豪}} 
 \centerline{\normalsize{\faPhone\ 111-1111-1111 \quad \faEnvelopeO\ \href{mailto:3230100000@zju.edu.cn}{3230100000@zju.edu.cn}}} 
-
 \centerline{\normalsize{\faGithubSquare\ \href{https://github.com/maksymilan}{https://github.com/maksymilan} \quad \faRssSquare\ \href{https://maksymilan.github.io/}{https://maksymilan.github.io}}} 
     
 \section{\makebox[\widthof{\faGraduationCap}][c]{\color{CVBlue}\faGraduationCap}\ 教育背景}    
-\textbf{浙江大学} \hfill 2023.9 -- 至今\\[0.5em] % 标题和正文间加一点距离
-CC98烂坑挖掘工程与技术\quad 大二 
-\begin{itemize}[nosep]
-    \item 相关课程：《烂坑挖掘及基础》、《高级挖坑技巧》、《烂坑数理统计》
-\end{itemize}
+\textbf{浙江大学} \hfill 2020.9 -- 2024.6\\[0.5em] 
+数学与应用数学专业（强基计划）\quad 本科
+\projectsep
+\textbf{浙江大学} \hfill 2024.9 -- 至今\\[0.5em]
+数学专业 \quad 硕士
 
-\section{\makebox[\widthof{\faUsers}][c]{\color{CVBlue}\faUsers}\ 项目经历}
-
-% --- 第一个项目 ---
+\section{\makebox[\widthof{\faUsers}][c]{\color{CVBlue}\faUsers}\ 学生工作与社会实践}
+% --- 第一个职位 ---
 % 将标题行末尾的 \\ 替换为 \titlebreak 命令
-\textbf{98烂坑风控与可视化作战平台} \hfill 2024.08 -- 至今 \titlebreak
-项目描述：为维护cc98社区的讨论纯度、净化“心灵之约”版块风气，本项目旨在对“烂坑”进行科学、严谨的量化分析，并引入\textbf{大语言模型(LLM)}对烂坑帖进行\textbf{自动化情感极性与“离谱指数”标注}。
+\textbf{计算数学研究生党支部副书记} \hfill 2024.09 -- 至今 \titlebreak
+职务描述：协助书记负责支部日常建设与党员管理，强化支部政治功能，提升基层党组织的凝聚力与战斗力。
 % 在 itemize 的选项中，使用 topsep=\intraProjectListTopSep 来控制上边距
 \begin{itemize}[nosep, topsep=\intraProjectListTopSep]
-    \item \textbf{数据与后端}：运用 \textbf{Go} 语言及 \textbf{GORM} 框架，实现对全站“烂坑”帖的7x24小时全天候\textbf{抓取}与\textbf{入库}(MySQL)。
-    \item \textbf{可视化前端}：采用原生 \textbf{HTML/CSS/JS} 构建了“烂坑”实时监控\textbf{作战大屏}。实现了坑主成分分析、挖坑热力图、年度烂坑王榜单等\textbf{可视化图表}，并通过 \textbf{AJAX} 异步刷新，确保数据洞察的实时性。
-    \item \textbf{核心产出}：全面掌握了从\textbf{数据采集、清洗、LLM标注到可视化分析}的“反烂坑”全链路技术。
+    \item \textbf{组织建设与规范管理}：严格落实“三会一课”制度，主持召开支部大会及支委会，负责党员发展全流程工作（从入党申请人培养到预备党员转正），确保档案整理与组织程序零差错、规范化。
+    \item \textbf{“党建+专业”创新实践}：发挥计算数学专业优势，探索“党建+数字化”管理模式，优化支部成员信息管理与党费收缴统计工作，将数据处理技术应用于党务工作场景，有效提升基层党务工作效率与精准度。
+    \item \textbf{群众联系与服务}：定期开展谈心谈话，及时掌握研究生同学的思想动态与实际困难，发挥党支部在学术科研与生活保障之间的桥梁纽带作用。
 \end{itemize}
-
-% 使用 \projectsep 命令来分隔两个项目
+% 使用 \projectsep 命令来分隔两个职位
 \projectsep
-
-% --- 第二个项目 ---
-\textbf{AIGC驱动的超进化自动挖坑机 (Agent)} \hfill 2025.02 -- 至今 \titlebreak
-项目描述：为探索心灵版规的边界，以及测试版主锁沉反应速度的极限，本项目基于\textbf{多智能体协作(MCP)与LLM}技术，开发了一款能\textbf{自主“挖坑”与“互坑”}的AI Agent。
+% --- 第二个职位 ---
+\textbf{数学科学学院研博会主席} \hfill 2025.09 -- 至今 \titlebreak
+职务描述：全面主持研博会工作，重点分管职业发展与就业服务板块，统筹大型活动策划与对外联络。
 \begin{itemize}[nosep, topsep=\intraProjectListTopSep]
-    \item \textbf{并发与调度}：后端采用 \textbf{Go} 语言，充分利用 \textbf{Goroutine} 和 \textbf{Channel} 的高并发模型，模拟\textbf{用户并发在线}，执行定时挖坑，确保挖坑行动的\textbf{隐蔽性}与\textbf{高效性}。
-    \item \textbf{实时监控与响应}：运用 \textbf{WebSocket} 协议实现了对目标帖子的\textbf{实时监听与交互}。确保在烂坑被识破的第一时间，Agent能光速完成\textbf{“lktp”}或\textbf{反向钓鱼}操作，展现出极高的AI博弈能力。
-    \item \textbf{可视化GUI}：前端使用 \textbf{React} 框架构建了\textbf{后台管理的可视化面板 (Admin Panel)}。可一键下达挖坑指令、动态调整Agent的\textbf{指令}、并实时监控数据。
+    \item \textbf{就业指导与服务}：协助学院开展就业经验分享会、企业实践研学、职业能力提升等就业活动，累计服务研究生超500人次；参与编纂《职业发展手册》，切实提升学生的职业规划意识与就业竞争力。
+    \item \textbf{活动统筹与文稿撰写}：统筹协调研博会4个部门，参与学院活动的调度与应急处置；撰写活动方案、新闻稿及调研报告等各类文书，具备规范的公文写作基础。
 \end{itemize}
-
-\section{\makebox[\widthof{\faCogs}][c]{\color{CVBlue}\faCogs}\ 技术栈}
+\section{\makebox[\widthof{\faCogs}][c]{\color{CVBlue}\faCogs}\ 综合素能}
 \begin{itemize}[nosep]
-    \item \textbf{编程语言：} \textbf{Go}, Python, C++
-    \item \textbf{开发工具：} SSH, Git, Vim, MakeFile,LaTex
-    \item \textbf{操作系统：} Linux
+    \item \textbf{办公与写作：} 精通 \textbf{LaTeX} 排版，熟练使用 Office (Word, Excel, PPT) 办公软件，具备规范的机关公文写作习惯。
+    \item \textbf{技术能力：} 熟练掌握 \textbf{Python} 等编程语言，具备优秀的数据处理与逻辑分析能力。
+    \item \textbf{语言能力：} 英语 \textbf{CET-6}，具备良好的阅读与日常交流能力。
 \end{itemize}
 \section{\makebox[\widthof{\faGraduationCap}][c]{\color{CVBlue}\faList}\ 获奖情况}
 \begin{itemize}
-    \item CC98年度用户 \hfill 2023.12
-    
+    \item 浙江大学“优秀研究生干部” \hfill 2025.12
+    \item 浙江大学“五好研究生” \hfill 2025.12
+    \item 浙江大学“灵均领航奖学金” \hfill 2026.10
 \end{itemize}
     
-\section{\makebox[\widthof{\faInfo}][c]{\color{CVBlue}\faInfo}\ 其他}
+\section{\makebox[\widthof{\faInfo}][c]{\color{CVBlue}\faInfo}\ 自我评价}
 \begin{itemize}[parsep=0.5ex]
-    \item \textbf{技术博客：} \href{https://maksymilan.github.io/}{https://maksymilan.github.io/}
-    \item \textbf{GitHub：} \href{https://github.com/maksymilan}{https://github.com/maksymilan} 
-    \item \textbf{英语水平：} CET-4, CET-6
+    \item \textbf{政治立场：} 坚持正确政治方向，深学笃用党的创新理论，具有强烈的家国情怀与扎根基层、服务人民的坚定信念。
+    \item \textbf{实践动机：} 渴望深入基层党政机关，将数学逻辑思维与数字化技术应用于政务实践，在服务奉献中提升岗位认知。
+    \item \textbf{工作态度：} 作风严谨，具备较强的执行力与团队协作精神。
 \end{itemize}
 \end{document}
